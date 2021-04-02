@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,6 +25,10 @@ SECRET_KEY = 'o*0ih_74ota@8=s9^4+rhum$xiygrfod8q!lky*wb-74*0_m%$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+# Redirección a Login
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
 
 ALLOWED_HOSTS = []
 
@@ -110,13 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-ni'
-
 TIME_ZONE = 'America/Managua'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
