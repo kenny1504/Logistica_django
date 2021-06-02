@@ -13,8 +13,8 @@ class TipoTransporte(ClaseModelo):
         unique=True
     )
 
-    def toJSON(self):
-        item = model_to_dict(select)
+    def toJSON(self):  # Retorna JSON
+        item = model_to_dict(self)
         return item
 
     def _str_(self):

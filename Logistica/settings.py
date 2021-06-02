@@ -26,9 +26,6 @@ SECRET_KEY = 'o*0ih_74ota@8=s9^4+rhum$xiygrfod8q!lky*wb-74*0_m%$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Redirección a Login
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login/'
 
 ALLOWED_HOSTS = []
 
@@ -129,3 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# Redirección a Login
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
