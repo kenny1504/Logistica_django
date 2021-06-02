@@ -12,7 +12,7 @@ var allCountries=null; /** Guarda paises y sus codigos (Telefono) */
     $(document).ready(function () {
 
         setTimeout(function () {
-
+            console.clear();
             console.log("%c\tAlerta!! \n", "color: red; font-size: x-large");
             console.log("%cEl codigo que ingrese en esta consola que pueda alterar el comportamiento del sistema sera penalizado.\n", "color: green");
         }, 300);

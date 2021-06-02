@@ -9,10 +9,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Meta -->
-    <meta name="description" content="SISTEMA - LOGISTICA DE CARGA INTERMODAL">
+    <meta name="description" content="SISTEMA - LOGISTICA DE CARGA">
     <meta name="author" content="kennysaenz31@gmail.com">
 
-    <title>SISTEMA - LOGISTICA DE CARGA INTERMODAL</title>
+    <title>SISTEMA - LOGISTICA DE CARGA</title>
     <link rel="icon" href={% static 'assets/bracket/Logo-Intermodal.ico' %}>
     <link rel="stylesheet" href={% static 'assets/bracket/css/bracket.css' %}>
     <!-- vendor css -->
@@ -70,7 +70,7 @@
     <div class="br-mainpanel">
       <div class="br-section-wrapper">
             <div id="principal" class="row"><!-- Agrega contenido desde otra vista-->
-
+            {% csrf_token %}
                 {% block principal %}
 
                     <section style="margin-top: 3%; width: 100%;" id="features">
@@ -132,7 +132,7 @@
             </div>
             <footer class="br-footer">
               <div class="footer-left">
-                  <div class="mg-b-2">Copyright - . LDCI. All Rights Reserved.</div>
+                  <div class="mg-b-2" id="copyright"></div>
               </div>
             </footer>
       </div>
@@ -163,9 +163,14 @@
     <script src={% static 'LDCI/Core/dropzone.min.js' %}></script>
     <script src={% static 'assets/bracket/lib/parsleyjs/parsley.js' %}></script>
 
-     @if($tipo==1)
-         <script src={% static 'LDCI/js/reportes.js' %}></script>
-     @endif
 
+       <script>
+             var anio = (new Date).getFullYear();
+             $("#copyright").text( 'Copyright - '+anio+'. LDC. All Rights Reserved.');
+       </script>
+     <script src={% static 'LDCI/js/reportes.js' %}></script>
+     {% block javascript %}
+
+     {% endblock %}
   </body>
 </html>

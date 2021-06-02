@@ -9,10 +9,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
    <!-- Meta -->
-   <meta name="description" content="SISTEMA - LOGISTICA DE CARGA INTERMODAL">
+   <meta name="description" content="SISTEMA - LOGISTICA DE CARGA">
    <meta name="author" content="kennysaenz31@gmail.com">
 
-   <title>SISTEMA - LOGISTICA DE CARGA INTERMODAL</title>
+   <title>SISTEMA - LOGISTICA DE CARGA</title>
    <link rel="icon" href={% static 'assets/bracket/Logo-Intermodal.ico' %}>
 
     <!-- vendor css -->
@@ -47,17 +47,17 @@
 
            <form  method="POST">
               <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
-                <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> LDCI <span class="tx-normal">]</span></div>
+                <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> LDC <span class="tx-normal">]</span></div>
                 <div class="tx-center mg-b-60">LOGISTICA DE CARGA INTERMODAL</div>
 
                    <div class="input-group">
                       <span class="input-group-addon"><i class="icon ion-person tx-16 lh-0 op-6"></i></span>
-                      <input type="text" id="id_username" name="username" class="form-control" placeholder="Ingrese Usuario">
+                      <input required type="text" id="id_username" name="username" class="form-control" placeholder="Ingrese Usuario">
                   </div>
                   <br>
                   <div class="input-group">
                       <span class="input-group-addon"><i class="icon ion-ios-locked-outline tx-16 lh-0 op-6"></i></span>
-                      <input type="password" id="id_password" name="password" class="inline-block form-control" placeholder="Ingrese Contraseña">
+                      <input required type="password" id="id_password" name="password" class="inline-block form-control" placeholder="Ingrese Contraseña">
                   </div>
                   {% csrf_token %}
 
@@ -72,7 +72,7 @@
     </div>
     <footer class="br-footer">
       <div class="footer-left">
-          <div class="mg-b-2">Copyright - 2021. LDCI. All Rights Reserved.</div>
+          <div class="mg-b-2" id="copyright"> </div>
       </div>
   </footer>
     <!-- js Core-->
@@ -88,6 +88,9 @@
     <script src={% static 'LDCI/Core/core.js' %}></script>
 
       <script>
+
+             var anio = (new Date).getFullYear();
+             $("#copyright").text( 'Copyright - '+anio+'. LDCI. All Rights Reserved.');
 
             // Verifica si hay errores
            {% if form.errors %}

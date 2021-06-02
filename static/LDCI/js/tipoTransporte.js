@@ -1,26 +1,36 @@
 var tblTipoTransporte = null;
 
 
-    $(document).ready(function () {
 
-        showLoad(true);
-        listarTipoTransporte();
+          setTimeout(function () {
+                showLoad(true);
+                listarTipoTransporte();
+        }, 300);
 
-    });
 
     /** Funcion que lista todos los registro de tipo de transporte */
     function listarTipoTransporte() {
 
-        var _token= $('input[name=_token]').val();
-
-        tblTipoTransporte = setDataTable("#tblTipoTransporte", {
+        var _token= $('input[name=csrfmiddlewaretoken]').val();
+        $('#tblTipoTransporte').DataTable({
+        responsive: true,
+        autoWidth: false,
+        destroy: true,
+        deferRender: true,
             ajax: {
                 type: 'POST',
-                url: '/tipoTransporte/getAll', //llamada a la ruta
+                url: window.location.pathname, //llamada a la ruta
                 data: {
-                    _token:_token
+                    'action':'getdata'
                 },
-            },
+               dataSrc: ""
+        },
+        columns: [
+            {"data": "id"},
+            {"data": "nombre"},
+            {"data": "desc"},
+            {"data": "desc"},
+        ],
             columnDefs: [
                 {
                     targets: -1,

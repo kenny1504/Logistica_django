@@ -18,6 +18,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('', include(('inventario.urls', 'inventario'), namespace='inventario')),
+    path('', include(('base.urls', 'base'), namespace='base')),
+    path('inventario/', include(('inventario.urls', 'inventario'), namespace='inventario')),# Llama achivo url de la aplicacion
     path('admin/', admin.site.urls),
 ]
